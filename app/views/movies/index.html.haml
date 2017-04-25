@@ -4,10 +4,10 @@
 %table#movies
   %thead
     %tr
-      %th= link_to "Movie Title", movie_path({:orderby => 'title'})
-      %th.hilite= link_to "Rating"
-      %th= link_to "Release Date"
-      %th= link_to "More Info"
+      %th{@order.equals('title') ? :class => "hilite" : null}= link_to "Movie Title", root_path({orderby: title})
+      %th{@order.equals('rating') ? :class => "hilite" : null}= link_to "Rating", root_path({orderby: rating})
+      %th{@order.equals('release_date') ? :class => "hilite" : null}= link_to "Release Date"
+      %th "More Info"
   %tbody
     - @movies.each do |movie|
       %tr
