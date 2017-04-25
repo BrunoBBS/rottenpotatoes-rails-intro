@@ -4,7 +4,7 @@
 %table#movies
   %thead
     %tr
-      %th= link_to "Movie Title"
+      %th= link_to "Movie Title", movie_path({:orderby => 'title'})
       %th.hilite= link_to "Rating"
       %th= link_to "Release Date"
       %th= link_to "More Info"
