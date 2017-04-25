@@ -4,7 +4,7 @@
 %table#movies
   %thead
     %tr
-      %th= link_to{class=title_header} "Movie Title"
+      %th= link_to "Movie Title", index_path, :id => title_header
       %th.hilite= link_to "Rating"
       %th= link_to "Release Date"
       %th= link_to "More Info"
