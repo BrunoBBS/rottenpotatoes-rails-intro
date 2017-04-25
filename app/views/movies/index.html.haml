@@ -4,9 +4,9 @@
 %table#movies
   %thead
     %tr
-      %th{@order.equals('title') ? :class => "hilite" : ""}= link_to "Movie Title", root_path({orderby: title})
-      %th{@order.equals('rating') ? :class => "hilite" : ""}= link_to "Rating", root_path({orderby: rating})
-      %th{@order.equals('release_date') ? :class => "hilite" : ""}= link_to "Release Date"
+      %th{:class => @order.equals('title') ? "hilite" : ""}= link_to "Movie Title", root_path({orderby: title})
+      %th{:class => @order.equals('rating') ? "hilite" : ""}= link_to "Rating", root_path({orderby: rating})
+      %th{:class => @order.equals('release_date') ? "hilite" : ""}= link_to "Release Date"
       %th "More Info"
   %tbody
     - @movies.each do |movie|
