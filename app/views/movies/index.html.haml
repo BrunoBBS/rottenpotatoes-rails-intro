@@ -4,10 +4,10 @@
 %table#movies
   %thead
     %tr
-      %th= link_to#title_header "Movie Title"
-      %th.hilite link_to "Rating"
-      %th link_to "Release Date"
-      %th link_to "More Info",
+      %th= link_to{class=title_header} "Movie Title"
+      %th.hilite= link_to "Rating"
+      %th= link_to "Release Date"
+      %th= link_to "More Info"
   %tbody
     - @movies.each do |movie|
       %tr
