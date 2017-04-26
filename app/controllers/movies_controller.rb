@@ -12,6 +12,7 @@ class MoviesController < ApplicationController
 
   def index
     @all_ratings = Movie.pluck(:rating).uniq
+    params[:ratings] = Hash[@all_ratings.map { |i| [i,1] }] unless params[:ratings]
     filter = params[:ratings] ? params[:ratings].keys : @all_ratings
     @movies = Movie.where(:rating => filter).order(params[:orderby])
     @order = params[:orderby] ? params[:orderby] : ""
